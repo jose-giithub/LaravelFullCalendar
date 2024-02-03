@@ -51,10 +51,18 @@
                 </button>
             </div>
             
-
-            <div class="mt-4 text-center" style="background-color: blue;">
-            <a href="/github-auth/redirect" class="btn btn-primary btn-lg">
+<!-- **********Añadir botones para loguearse con GitHub y Google -->
+            <div class="mt-4 text-center" style="background-color: white;">
+             <!-- href que nos marca el controlador -->
+                <a href="/github-auth/redirect" class="btn btn-primary btn-lg">
                     <i class="fab fa-google"></i> Registrarse con GitHub
+                </a>
+            </div>
+
+            <div class="mt-4 text-center" style="background-color: white;">
+            <!-- href que nos marca el controlador -->
+            <a href="/google-auth/redirect" class="btn btn-primary btn-lg">
+                    <i class="fab fa-google"></i> Registrarse con Google
                 </a>
             </div>
 

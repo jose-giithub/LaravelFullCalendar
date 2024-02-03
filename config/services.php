@@ -34,8 +34,17 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/github-auth/callback',
+        'redirect' =>  env('GITHUB_CALLBACK'),
     ],
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'), // Tu ID de cliente de Google
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'), // Tu secreto de cliente de Google
+        'redirect' => env('GOOGLE_CALLBACK'), // URL de redireccionamiento
+    ],
+    
+
+   
+    
 
 ];
   // 'google' => [

@@ -2,12 +2,14 @@
 
 <x-app-layout>
     <x-slot name="header">
-
-         <button class="btn btn-success" style="margin-left: 5px;">
+        <!-- boton para ir al calendario -->
+        <button class="btn btn-success" style="margin-left: 5px;">
             <a href="{{ route('calendar') }}">{{ __('Calendario') }}</a>
-          
-        </button> 
-
+        </button>
+        <!-- boton para ir al sqWord -->
+        <button class="btn btn-success" style="margin-left: 5px;">
+            <a href="{{ url('/sqword') }}">{{ __('SQword') }}</a>
+        </button>
     </x-slot>
 
     <div class="py-12">
