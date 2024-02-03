@@ -7,19 +7,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="csrf-token" content="{{ csrf_token() }}"> <!-- Aquí va el token CSRF -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-
+<!-- llamamos a los archivos js y css que estan en public\jsSqword y public\cssSqword -->
   <link href="{{ asset('cssSqword/estilos.css') }}" rel="stylesheet">
   <script src="{{ asset('jsSqword/funciones.js') }}"></script>
   <script src="{{ asset('jsSqword/main.js') }}"></script>
   <script src="{{ asset('jsSqword/palabras.js') }}"></script>
-
+  <title>Juego Sqword</title>
 </head>
 
 
 <body>
   <header class="titulo">
+    <a href="{{ route('dashboard') }}" class="btn btn-success">{{ __('Dashboard') }}</a>
     <h1 class="text-center">SQWORD</h1>
   </header>
 
@@ -76,7 +78,7 @@
 
   <!-- Mostramos las palabras acertadas una vez se acaba de escrivir-->
   <div id="divPalabrasAcertadas">
-    <strong>Palabras hacertada</strong>
+    <!-- <strong>Palabras hacertada</strong>  crear desde el css-->
     <p id="palabrasAcertadas"></p>
   </div>
 

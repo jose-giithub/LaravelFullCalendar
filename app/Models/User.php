@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use app\Models\Partida; //inporto el modelo partida
 
 class User extends Authenticatable
 {
@@ -27,6 +28,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        //añadir atributos puntos y fecha
     ];
 
     /**
@@ -58,4 +60,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // RELACIONO USER CON PARTIDA
+    public function partidas()
+    {
+        return $this->hasMany(Partida::class);
+    }
 }

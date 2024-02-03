@@ -1,3 +1,28 @@
+/**
+ * Función que recibe un int y lo guarda en la BD en la tabla partidas
+ * @param {*} puntosGanados 
+ */
+function guardarPuntosBD(puntosGanados){
+  //guardo los puntos totales ganados llamando a la función
+  console.log('en la funcion guardar puntos', puntosGanados);
+   // Ahora, enviamos los puntos al servidor
+   fetch('/guardar-partida', { // Ajusta la URL a la nueva ruta en web.php
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    },
+    credentials: 'include', // Importante para enviar cookies de sesión
+    body: JSON.stringify({
+        puntos: puntosGanados,
+    })
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+}
 
 /**
  * Función que suma la longitud de todas las palabra acertadas y retorna un int 
@@ -8,24 +33,7 @@ function sumarPuntos(arrayPalabrasUnicas) {
   for (let i = 0; i < arrayPalabrasUnicas.length; i++) {
     contador += arrayPalabrasUnicas[i].length;
   }
-
-  //Función para la fecha:
-  function obtenerFechaActual() {
-    // Crea un nuevo objeto Date
-    const fechaActual = new Date();
-
-    // Obtiene el día del mes (1-31)
-    const dia = fechaActual.getDate();
-
-    // Obtiene el mes (0-11, donde 0 es enero y 11 es diciembre)
-    const mes = fechaActual.getMonth() + 1; // Sumamos 1 porque los meses comienzan desde 0
-
-    // Obtiene el año con cuatro dígitos
-    const anio = fechaActual.getFullYear();
-
-    // Devuelve la fecha en formato "dia/mes/año"
-    return [dia, mes, anio].join('/');
-  }
+  guardarPuntosBD(contador);
   // Llama la función para mostrar la fecha actual
   const fechaActualElement = document.getElementById("Fecha");
   const fechaActual = obtenerFechaActual();
@@ -35,14 +43,28 @@ function sumarPuntos(arrayPalabrasUnicas) {
   // Ocultamos tanto la tabla de en medio como la de siguiente letra 
   let ocultarTodo = document.getElementById("ocultar");
   ocultarTodo.style.display = "none";
-
-
   //Mostramos los puntos que ha hecho
   let divPuntuacion = document.getElementById("divPuntuacion");
   divPuntuacion.style.display = "block";
   let texto = document.getElementById("textoPuntos");
   texto.innerHTML = 'Tus puntos son: ' + contador;
+}
 
+/**
+ * Función para obtener la feche de hoy
+ * @returns 
+ */
+function obtenerFechaActual() {
+  // Crea un nuevo objeto Date
+  const fechaActual = new Date();
+  // Obtiene el día del mes (1-31)
+  const dia = fechaActual.getDate();
+  // Obtiene el mes (0-11, donde 0 es enero y 11 es diciembre)
+  const mes = fechaActual.getMonth() + 1; // Sumamos 1 porque los meses comienzan desde 0
+  // Obtiene el año con cuatro dígitos
+  const anio = fechaActual.getFullYear();
+  // Devuelve la fecha en formato "dia/mes/año"
+  return [dia, mes, anio].join('/');
 }
 
 /**
@@ -148,6 +170,11 @@ function guardarListaInputs() {
   return listaLetras;
 }
 
+/**
+ * Función que recorre todas las letras ingresadas y retorna los aciertos sin repeticiones que editen
+ * en las filas y columnas 
+ * @returns 
+ */
 function palabrasAcertadas() {
   //LLAMO A LA FUNCIÓN QUE GUARDA TODOS LOS INPUTS DE LA CUADRICULA.
   let listaLetras = guardarListaInputs(); //guardaremos todas las letras de la cuadricula en una str
@@ -178,7 +205,6 @@ function palabrasAcertadas() {
       }
     });
   });
-  //console.log(palabrasAcertadas);
 
   //RECORRO EL ARRAY DE MANERA VERTICAL DE ARRIBA A BAJO PARA VERIFICAR SI HAY PALABRAS DE 3 O 4 O 5 LETRAS
 
@@ -225,9 +251,6 @@ function palabrasAcertadas() {
 
   // Agregar el fragmento al div
   divPalabrasAcertadas.appendChild(fragmento);
-
-
-
 
   return arrayPalabrasUnicas;
 }

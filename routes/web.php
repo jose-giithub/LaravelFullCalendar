@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
+use App\Http\Controllers\PartidaController;//ruta del controlador del juego sqword
 
 
 Route::get('/', function () {//modifico la pagina de inicio
@@ -67,7 +68,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         return view('dashboard');
     })->name('dashboard');
 
-    
+    //ruta guardar puntos y fecha sqword
+    Route::post('/guardar-partida', [PartidaController::class, 'guardarPartida'])->middleware('auth');
     Route::get('/sqword', function () {return view('profile.sqword');});//ruta sqword
     Route::get('/event/index', [EventController::class, 'index'])->name('calendar');
     Route::post('/event/store', [EventController::class, 'store'])->name('event.store');
