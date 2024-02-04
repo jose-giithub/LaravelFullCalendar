@@ -73,7 +73,11 @@ let botonCerrar = document.getElementById('cerrarInstrucciones');
 botonCerrar.addEventListener('click', mostrarInstrucciones);
 
 
-  
+  // Añade el event listener al botón de reinicio
+let botonReinicio = document.getElementById('reinicioJuego');
+if (botonReinicio) {
+    botonReinicio.addEventListener('click', reiniciarTodo);
+}
 
   
 }); //final del DOMContentLoaded

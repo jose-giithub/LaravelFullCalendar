@@ -1,6 +1,62 @@
 body {
-  background-color: #ffdab9;
+  background-color: #dfdddc;
 }
+.titulo {
+  display: flex; /* Establece el header para usar flexbox */
+  align-items: center; /* Alinea verticalmente los elementos en el centro */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  background-color: gray; /* Fondo semi-transparente */
+  height: 80px;
+  position: relative; /* Establece una posición relativa para posicionar absolutamente el botón */
+}
+
+.titulo h1 {
+  margin: 0; /* Elimina el margen por defecto de los h1 */
+}
+/*//////////ESTILOS BOTON RETORNO */
+#botonRetorno {
+  position: absolute; /* Posición absoluta dentro del header */
+  left: 20px; /* 20px desde el borde izquierdo del header */
+  top: 50%; /* 50% desde el borde superior del header */
+  transform: translateY(-50%); /* Desplaza el botón hacia arriba en un 50% de su altura para centrarlo */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #34a743;
+  border: 2px solid #000;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+#botonRetorno:hover {
+background-color: #0056b3;
+color: #fff;
+}
+#reinicioJuego {
+  position: absolute; /* Posición absoluta dentro del header */
+  right: 20px; /* 20px desde el borde izquierdo del header */
+  top: 50%; /* 50% desde el borde superior del header */
+  transform: translateY(-50%); /* Desplaza el botón hacia arriba en un 50% de su altura para centrarlo */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #34a743;
+  border: 2px solid #000;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+#reinicioJuego:hover {
+background-color: #0056b3;
+color: #fff;
+}
+
 
 .message-container {
   margin-bottom: 20px;
@@ -15,7 +71,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffdab9;
+  background-color: #dfdddc;
   border-radius: 10px;
   margin-bottom: 10px; /* Ajusta el valor según la separación que desees */
 }
@@ -29,7 +85,7 @@ body {
   width: 80px;
   font-size: 60px;
   align-items: center;
-  background-color: #e5e5e5;
+  background-color: #fdfdfd;
   border-radius: 10px;
   text-transform: uppercase;
   margin-bottom: 10px; /* Ajusta el valor según la separación que desees */
@@ -37,7 +93,7 @@ body {
 
 /*ESTILOS JOKER*/
 #contenedorJoker {
-  background-color: #ffdab9; /* Cambia al mismo color del fondo del body */
+  background-color:  #dfdddc; /* Cambia al mismo color del fondo del body */
   display: none;
   width: 800px;
 }
@@ -71,13 +127,13 @@ body {
   width: 70px; /* Ajusta el ancho según tus preferencias */
   height: 70px; /* Ajusta la altura según tus preferencias */
   text-align: center;
-  background-color: #e5e5e5;
+  background-color: #fffefe;
   font-size: 50px; /* Ajusta el tamaño de la fuente según tus preferencias */
   text-transform: uppercase;
   color: #000;
   border: solid 3px black;
   border-radius: 10px;
-  margin: 5px;
+  margin: 1px 1px;
 }
 
 /* Estilos de los inputs dentro de la cuadricula */
@@ -85,7 +141,7 @@ input{
   width: 80px;
   height: 80px;
   text-align: center;
-  background-color:  #ffdab9;
+  background-color:  #fefefd;
   font-size: 60px;
   text-transform: uppercase;
   color: #000;
@@ -115,6 +171,7 @@ input{
 .popup button {
   display: block;
   margin: auto;
+  background-color: #34a743;
 }
 
 #mostarInstrucciones {
@@ -127,7 +184,7 @@ input{
   text-decoration: none;
   cursor: pointer;
   color: #fff;
-  background-color: #8d6f54;
+  background-color: #34a743;
   border: 2px solid #000;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
@@ -136,22 +193,47 @@ input{
   background-color: #0056b3;
   color: #fff;
 }
-
-/*CSS del resultado*/
-#resultados {
+/* CSS de palabras acertadas */
+#palabrasAcertadas {
   position: fixed;
-  top: 50%;
+  top: 20%; /* Cambiado para que se muestre más arriba */
   left: 50%;
-  transform: translate(-50%, 50%); /* Cambiado de -50% a 50% para centrar hacia abajo */
+  transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   color: #fff;
   border-radius: 10px;
   text-align: center;
+  display: none;
+  max-width: 50%;
+  overflow-y: auto;
 }
 
-#resultados h1 {
-  margin: 0; /* Elimina el margen predeterminado del encabezado */
+/* CSS del resultado */
+#divPuntuacion {
+  position: fixed;
+  top: 60%; /* Cambiado para que se muestre más abajo, por debajo de las palabras acertadas */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  max-width: 50%;
+  overflow-y: auto;
+}
+
+/* Estilos comunes para listas dentro de divPuntuacion y palabrasAcertadas */
+#divPuntuacion ul, #palabrasAcertadas ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+#divPuntuacion li, #palabrasAcertadas li {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 .custom-width {
@@ -163,7 +245,7 @@ input{
 
 
 
-/* Css del div que muestra las palabras acertadas */
+/* Css del div que muestra las palabras acertadas 
 #divPalabrasAcertadas{
   text-align: center;
-}
+}*/

@@ -9,7 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use app\Models\Partida; //inporto el modelo partida
+use App\Models\Partida; // Corregido//inporto el modelo partida
+use app\Http\Controllers\PartidaController;
 
 class User extends Authenticatable
 {
@@ -65,5 +66,6 @@ class User extends Authenticatable
     public function partidas()
     {
         return $this->hasMany(Partida::class);
+        
     }
 }

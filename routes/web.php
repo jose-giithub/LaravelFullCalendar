@@ -68,6 +68,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         return view('dashboard');
     })->name('dashboard');
 
+    //ruta para recuperar los datos de la bd del juego sqword
+    Route::get('/partidas-usuario', [PartidaController::class, 'partidasUsuario'])->middleware('auth');
     //ruta guardar puntos y fecha sqword
     Route::post('/guardar-partida', [PartidaController::class, 'guardarPartida'])->middleware('auth');
     Route::get('/sqword', function () {return view('profile.sqword');});//ruta sqword

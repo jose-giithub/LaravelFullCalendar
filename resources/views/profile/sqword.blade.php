@@ -20,11 +20,12 @@
 
 
 <body>
-  <header class="titulo">
-    <a href="{{ route('dashboard') }}" class="btn btn-success">{{ __('Dashboard') }}</a>
+  <header  class="titulo">
+  <a id="botonRetorno" href="{{ route('dashboard') }}" class="btn">{{ __('Inicio') }}</a>
+  <a id="reinicioJuego" href="" class="btn">Reiniciar juego</a>
     <h1 class="text-center">SQWORD</h1>
   </header>
-
+  
   <!-- Div que suaremos para cuando salgan los resultados ocultarlo todo -->
   <div id="ocultar">
     <div class="message-container">
@@ -75,29 +76,14 @@
       <button id="cerrarInstrucciones">Tancar</button>
     </div>
   </div>
-
-  <!-- Mostramos las palabras acertadas una vez se acaba de escrivir-->
-  <div id="divPalabrasAcertadas">
-    <!-- <strong>Palabras hacertada</strong>  crear desde el css-->
-    <p id="palabrasAcertadas"></p>
-  </div>
-
-  <!-- Mostrar resultados con la hora -->
-  <div id="divPuntuacion" class="container-fluid custom-width"
-    style="background-color: rgb(196, 188, 188); border-radius: 10px; display: none;">
-    <div class="row justify-content-center">
-      <!-- Columna de Fecha -->
-      <div class="col-md-6 text-center">
-        <strong>Fecha:</strong>
-        <p id="Fecha"></p>
-      </div>
-      <!-- Columna de Puntuación -->
-      <div class="col-md-6 text-center">
-        <strong>Puntuación:</strong>
-        <p id="textoPuntos"></p>
-      </div>
-    </div>
-  </div>
+  <!-- Contenedor para mostrar las palabras acertadas -->
+  <div id="palabrasAcertadas" class="container-fluid custom-width">
+    <!-- Aquí se insertarán los resultados  -->
+</div>
+  <!-- Contenedor para mostrar los resultados de la partida -->
+<div id="divPuntuacion" class="container-fluid custom-width">
+    <!-- Aquí se insertarán los resultados de la partida -->
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
