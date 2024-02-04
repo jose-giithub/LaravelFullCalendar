@@ -46,7 +46,7 @@ function recuperarPartidasUsuario() {
     })
         .then((response) => response.json())
         .then((partidas) => {
-            console.log("La variable partidas tiene:", partidas); // Aquí tienes las partidas, puedes procesarlas como desees
+          //  console.log("La variable partidas tiene:", partidas); // Aquí tienes las partidas, puedes procesarlas como desees
             mostrarPartidas(partidas); // Función para procesar y mostrar las partidas
         })
         .catch((error) => console.error("Error:", error));
@@ -256,6 +256,7 @@ function guardarListaInputs() {
  * @returns
  */
 function palabrasAcertadas() {
+    
     //LLAMO A LA FUNCIÓN QUE GUARDA TODOS LOS INPUTS DE LA CUADRICULA.
     let listaLetras = guardarListaInputs(); //guardaremos todas las letras de la cuadricula en una str
 
@@ -269,19 +270,24 @@ function palabrasAcertadas() {
     let palabrasAcertadas = "";
     let esPrimeraPalabra = true; //para impedir que se ponga un - al inicio
     //recorro el array con un forEch
+   
     arrayListaLetras.forEach((segmentoArray) => {
         //recorro array de letras
+
         DICCIIONARIO.forEach((palabraDiccionario) => {
             //recorro el array de diccionario
+            console.log('palabra dic', palabraDiccionario);
             if (segmentoArray.includes(palabraDiccionario)) {
                 //si en el segmento hay alguna coincidencia
                 if (!esPrimeraPalabra) {
+                  
                     //solo se cumplirá en la primer vuelta
                     palabrasAcertadas += "-"; //le meto un - para luego hacer un split
                 } else {
                     esPrimeraPalabra = false; //la primera vez que entre lo modifico y a partir de la siguiente siempre entrara
                 }
                 palabrasAcertadas += palabraDiccionario; //guardo las palabras que coinciden
+                console.log(palabrasAcertadas);
             }
         });
     });

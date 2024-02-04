@@ -1,7 +1,9 @@
 //import { DICCIIONARIO } from "./palabras.js";LETRA_RANDOM
 
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("entro");
+document.addEventListener('DOMContentLoaded', async () => {
+  await cargarDiccionario(); // Espera a que el diccionario se cargue completamente
+  
+
 
   window.CONTADOR2 = 0;
   window.CONTADOR = 0; //contador de letras random insertadas en la cuadricula
