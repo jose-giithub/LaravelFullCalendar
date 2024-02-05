@@ -1,96 +1,170 @@
-<div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-    <x-application-logo class="block h-12 w-auto" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <h1 class="mt-8 text-2xl font-medium text-gray-900">
-        Welcome to your Jetstream application!
-    </h1>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdcsrf_token()elivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="CSSwelcome/style.css">
+    <title>Laravel proyecto M12</title>
+  </head>
+  <body>
+    <style>
+     
 
-    <p class="mt-6 text-gray-500 leading-relaxed">
-        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-        to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-        you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-        ecosystem to be a breath of fresh air. We hope you love it.
-    </p>
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Contenedor fluido para la barra de navegación, se usa para un ancho completo -->
+      <div class="container-fluid">
+        <!-- Marca o título de la barra de navegación, generalmente contiene el nombre o logo de la página -->
+        <a class="navbar-brand" href="#"></a>
+        <!-- Botón que se muestra para pantallas pequeñas, activa la navegación colapsable -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <!-- Icono del botón que se muestra en pantallas pequeñas (icono de hamburguesa) -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Contenido colapsable de la barra de navegación que se muestra al hacer clic en el botón de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Lista de elementos de navegación -->
+          <ul class="navbar-nav">
+            <!-- Elemento de navegación individual, activo indica la página actual -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" >Entrar con tu usuario aquí</a> 
+            </li>
+            <!-- Otro elemento de navegación -->
+            <li id="botonEntrar"  class="nav-item bg-primary">
+              <!-- <a id="hrefEntrar" class="nav-link" href="welcome.html"></a> -->
+              <a id="hrefEntrar" class="nav-link" class="nav-link active" aria-current="page" href="{{ route('login') }}">{{ __('Proyecto Jose') }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="container-fluid p-3 my-3 bg-primary text-center text-white">
+        <h1>Proyecto Jose</h1>
+      </header>
+      
+     <!-- Contenedor principal fluido que se adapta al 100% del espacio disponible de su contenedor padre -->
+<div class="container-fluid">
+       <!-- Segunda fila para las imágenes -->
+    <div class="row justify-content-center">
+         <!-- Columna 1 con flexbox para alinear centrado tanto horizontal como verticalmente la primera imagen -->
+         <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center">
+        <!-- Imagen que se ajustará cubriendo todo el espacio asignado, posiblemente recortando contenido -->
+          <img src="img/ahoracado.png" alt="" class="image-fit">  
+        </div>
+        
+        <!-- Columna 2 con flexbox para alinear centrado tanto horizontal como verticalmente la segunda imagen -->
+        <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center">
+            <!-- Imagen que se ajustará cubriendo todo el espacio asignado, posiblemente recortando contenido -->
+            <img src="img/arbol.png" alt="" class="image-fit">
+        </div>
+        <!-- 3 -->
+        <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center">
+            <!-- Imagen que se ajustará cubriendo todo el espacio asignado, posiblemente recortando contenido -->
+            <img src="img/animacion.png" alt="" class="image-fit">
+        </div>
+    </div>
 </div>
-
-<div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-            </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                <a href="https://laravel.com/docs">Documentation</a>
-            </h2>
+<div class="row justify-content-center">
+    <!-- Columna que ocupa la mitad del espacio disponible para el título de la primera imagen tiene la propiedad de centrar el texto-->
+    <div class="col-lg-4 col-md-6 col-12 text-center">
+      <button class="btn btn-primary">
+                    <a href="ahorcado/index.html">Jugar al ahorcado</a>
+                    <!-- <a href="{{ route('register') }}">{{ __('Jugar al ahorcado') }}</a> -->
+                </button>
+            </div>
+    <!-- Columna que ocupa la mitad del espacio disponible para el título de la segunda imagen tiene la propiedad de centrar el texto-->
+       
+    <div class="col-lg-4 col-md-6 col-12 text-center">
+      <button class="btn btn-primary">
+                     <a href="arbol/index.html">Árbol de navidad</a>
+            <!-- <a href="{{ route('register') }}">{{ __('Árbol de navidad') }}</a> -->
+                 </button>
+            </div>
+            <!-- Col 3 -->
+         
+            <div class="col-lg-4 col-md-6 col-12 text-center">
+              <button class="btn btn-primary">
+                     <a href="animacionCSS/index.html">Animación css</a>
+            <!-- <a href="{{ route('register') }}">{{ __('Animación css') }}</a> -->
+                 </button>
+            </div>
         </div>
-
-        <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-            Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the framework or have previous experience, we recommend reading all of the documentation from beginning to end.
-        </p>
-
-        <p class="mt-4 text-sm">
-            <a href="https://laravel.com/docs" class="inline-flex items-center font-semibold text-indigo-700">
-                Explore the documentation
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-indigo-500">
-                    <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
-                </svg>
-            </a>
-        </p>
+        <!-- fil img 3-->
+        <div class="row justify-content-center">
+     <!-- Columna 1 con flexbox para alinear centrado tanto horizontal como verticalmente la primera imagen -->
+     <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center">
+    <!-- Imagen que se ajustará cubriendo todo el espacio asignado, posiblemente recortando contenido -->
+        <img src="img/sqword.png" alt="" class="image-fit">
+            </div>
+    <!-- Columna 2 con flexbox para alinear centrado tanto horizontal como verticalmente la segunda imagen -->
+    <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center">
+                <!-- Imagen que se ajustará cubriendo todo el espacio asignado, posiblemente recortando contenido -->
+                <img src="img/porfolio.png" alt="" class="image-fit">
+            </div>
+            <!-- 3 -->
+            <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center">
+                <!-- Imagen que se ajustará cubriendo todo el espacio asignado, posiblemente recortando contenido -->
+                <img src="img/logoJava.png" alt="" class="image-fit">
+            </div>
+        </div>
     </div>
 
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
-                <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-            </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                <a href="https://laracasts.com">Laracasts</a>
-            </h2>
-        </div>
-
-        <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-            Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-        </p>
-
-        <p class="mt-4 text-sm">
-            <a href="https://laracasts.com" class="inline-flex items-center font-semibold text-indigo-700">
-                Start watching Laracasts
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-indigo-500">
-                    <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
-                </svg>
-            </a>
-        </p>
+               <!--  fil Botones 4 -->
+              <div class="row justify-content-center">
+                <!-- Columna que ocupa la mitad del espacio disponible para el título de la primera imagen tiene la propiedad de centrar el texto-->
+                <div class="col-lg-4 col-md-6 col-12 text-center">
+                    <button class="btn btn-primary">
+                    <a href="{{ route('login') }}">{{ __('Jugar SQword') }}</a>
+                        <!-- <a href="{{ route('register') }}">{{ __('Jugar SQword') }}</a> -->
+                    </button>
+                </div>
+               <!-- Columna que ocupa la mitad del espacio disponible para el título de la segunda imagen tiene la propiedad de centrar el texto-->
+               <div class="col-lg-4 col-md-6 col-12 text-center">
+                     <button class="btn btn-primary">
+                        <a href="#" >{{ __('Mi porfolio') }}</a>
+                        <!-- <a href="{{ route('register') }}">{{ __('Jugar SQword') }}</a> -->
+                    </button>
+                </div>
+                <!-- Col 3 -->
+                <div class="col-lg-4 col-md-6 col-12 text-center">
+                    <button class="btn btn-primary">
+                         <a href="https://github.com/jose-giithub/Proyecte_UF3_laberinto" style="text-decoration: none; color: inherit;">Ver código Java</a>
+                <!-- <a href="{{ route('register') }}">{{ __('Registrarse') }}</a> -->
+                     </button>
+                </div>
+               </div>
     </div>
-
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-            </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                <a href="https://tailwindcss.com/">Tailwind</a>
-            </h2>
-        </div>
-
-        <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-            Laravel Jetstream is built with Tailwind, an amazing utility first CSS framework that doesn't get in your way. You'll be amazed how easily you can build and maintain fresh, modern designs with this wonderful framework at your fingertips.
-        </p>
-    </div>
-
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-            </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                Authentication
-            </h2>
-        </div>
-
-        <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-            Authentication and registration views are included with Laravel Jetstream, as well as support for user email verification and resetting forgotten passwords. So, you're free to get started with what matters most: building your application.
-        </p>
-    </div>
-</div>
+    
+  
+  </body>
+</html>

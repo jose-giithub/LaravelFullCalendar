@@ -1,0 +1,38 @@
+body {
+    background-color: beige;
+  }
+/************estilos boton para entrar al login*/
+#botonEntrar a {
+  text-decoration: none !important;
+  color: white!important;
+}
+#hrefEntrar:hover{
+  background-color: yellow !important; 
+  color: #000!important;
+}
+
+/* Estilo para ajustar las imágenes dentro de las columnas */
+.image-fit {
+width: 50% !important; /* Establece el ancho de las imágenes al 50% de su contenedor padre */
+height: 100% !important; /* Establece la altura de las imágenes al 100% de la altura de su contenedor */
+object-fit: cover !important; /* Ajusta las imágenes para cubrir todo el espacio disponible, recortando el exceso */
+}
+button {
+margin-top: 10px!important;
+margin-bottom: 10px!important;
+font-size: 15px !important;
+color:white !important; /* Color inicial del texto del botón */
+transition: background-color 0.3s, color 0.3s !important; /* Transición suave para el color de fondo y el texto */
+cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa el ratón por encima */
+text-decoration: none !important;
+}
+
+button:hover {
+background-color: yellow !important; /* Color de fondo en hover */
+color: #000 !important; /* Puedes cambiar esto si también quieres cambiar el color del texto en hover */
+/* Aquí puedes añadir otros cambios que quieras hacer durante el hover */
+}
+button a {
+  text-decoration: none !important;
+  color: inherit!important;
+}

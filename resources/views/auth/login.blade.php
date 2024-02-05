@@ -1,11 +1,15 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.tailwindcss.com"></script>
 <x-guest-layout>
+<div style="position: absolute; top: 35px; left: 35px;">
+<a href="{{ route('welcome') }}" class="btn btn-success">Volver al inicio</a>
+    </div>
     <x-authentication-card>
         <x-slot name="logo">
+   
             <x-authentication-card-logo />
         </x-slot>
-
+       
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))

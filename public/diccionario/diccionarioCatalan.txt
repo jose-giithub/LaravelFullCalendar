@@ -1,13 +1,8 @@
-a
-e
-i
-o
-u
-aalen
-aalst
-aarau
-aare
-aaron
+alen
+alst
+arau
+are
+aron
 aba
 abaco
 abada
@@ -88,7 +83,6 @@ agave
 agbar
 agde
 age
-agell
 agell
 agen
 ageo

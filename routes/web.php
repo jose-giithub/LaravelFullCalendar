@@ -9,10 +9,18 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\PartidaController;//ruta del controlador del juego sqword
 
 
-Route::get('/', function () {//modifico la pagina de inicio
-    return redirect()->route('login');
-});
+// Route::get('/', function () {//modifico la pagina de inicio
+//     return redirect()->route('login');
+// });
+//ruta de la pagina welcome, la primera
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
 
+//ruta para el login 
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 
 // Parte de GOOGLE
 Route::get('/google-auth/redirect', function () {

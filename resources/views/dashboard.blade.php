@@ -11,6 +11,9 @@
         <button class="btn btn-success" style="margin-left: 5px;">
             <a href="{{ url('/sqword') }}">{{ __('SQword') }}</a>
         </button>
+        <button class="btn btn-success" style="margin-left: 5px;">
+<a href="{{ route('welcome') }}">Volver al inicio</a>
+    </button>
     </x-slot>
 
     <div class="py-12">
